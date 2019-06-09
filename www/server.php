@@ -6,7 +6,7 @@ if (isset($_GET["login"])){
 	{
 		function __construct()
 		{
-			$this->open('database.db');
+			$this->open('logincreds.db');
 									        }
 	}
 	$db = new MyDB();
@@ -25,7 +25,9 @@ if (isset($_GET["login"])){
 	}
 	if ($id!=""){
 		if ($password===md5($_POST["password"]){
-			$_SESSION["login"]=$username;
+			$_SESSION["loggedin"]=true;
+			$_SESSION["id"]=$id;
+			$_SESSION["username"]=$username;
 			header('Location: index.php');
 		}else{
 			echo "Incorrect Username or Password";
