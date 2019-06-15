@@ -1,7 +1,6 @@
-
 <?php
 session_start();
-if(isset($_SESSION["login"]) && $_SESSION["login"] === true){
+if(isset($_SESSION["login"]) || $_SESSION["login"] === true){
     header("location: admin.php");
         exit;
 }
@@ -11,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		function __construct()
 		{
 			$this->open('login.db');
-									        }
+		}
 	}
 	$db = new MyDB();
 	if(!$db){
@@ -68,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login</div>
       <div class="card-body">
-      <form method="post" action="login.php">
+      <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method = "post">
           <div class="form-group">
             <div class="form-label-group">
 		    <input type="text" id="inputEmail" name=username class="form-control" placeholder="Username" required="required" autofocus>
@@ -81,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
               <label for="inputPassword">Password</label>
             </div>
           </div>
-	  <button type="submit" class="btn btn-primary btn-block">Login</button>
+	  <button type="submit" value="Submit" class="btn btn-primary btn-block">Login</button>
         </form>
 	<div class="text-center">
 	<br>
