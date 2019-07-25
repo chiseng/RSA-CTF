@@ -35,7 +35,7 @@ if(!isset($_SESSION["login"]) || $_SESSION["login"] !== true){
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.php">Admin Dashboard</a>
+    <a class="navbar-brand mr-1" href="admin.php">Admin Dashboard</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -103,12 +103,12 @@ if(!isset($_SESSION["login"]) || $_SESSION["login"] !== true){
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>
-        <a class="nav-link" href="sanity.html">
+        <a class="nav-link" href="sanity.php">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Sanity</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="fileupload.php">
+        <a class="nav-link" href="">
           <i class="fas fa-fw fa-table"></i>
           <span>File Upload</span></a>
       </li>
